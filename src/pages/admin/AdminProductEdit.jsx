@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { productApi } from "../../api/productApi";
 import { useParams, useNavigate } from "react-router-dom";
-import "../../styles/AdminProductEdit.css";
+import "../../styles/adminproductedit.css";
 
 export default function AdminProductEdit() {
   const { id } = useParams();

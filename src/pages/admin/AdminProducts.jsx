@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../store/productSlice";
 import { productApi } from "../../api/productApi";
 import { useNavigate } from "react-router-dom";
-import "../../styles/AdminProductList.css";
+import "../../styles/adminproductlist.css";
 
 function AdminProductListInner() {
   const dispatch = useDispatch();

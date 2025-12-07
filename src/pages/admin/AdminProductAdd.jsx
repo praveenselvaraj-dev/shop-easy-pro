@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { productApi } from "../../api/productApi";
 import { useNavigate } from "react-router-dom";
-import "../../styles/AdminProductAdd.css";
+import "../../styles/adminproductadd.css";
 
 function AdminProductAddInner() {
   const navigate = useNavigate();
