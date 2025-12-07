@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const authClient = axios.create({
-  baseURL: "https://shop-easy-pro.vercel.app",
+  baseURL: "https://shop-easy-pro.vercel.app/api/v1/",
   withCredentials: true,
 });
 
