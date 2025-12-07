@@ -13,6 +13,7 @@ export default function AdminProductEdit() {
     name: "",
     price: "",
     stock: "",
+    category: "",
     description: "",
     image: null,
   });
@@ -45,6 +46,7 @@ export default function AdminProductEdit() {
         name: data.name,
         price: data.price,
         stock: data.stock,
+        category: data.category,
         description: data.description,
         image: null,
       });
@@ -131,6 +133,7 @@ export default function AdminProductEdit() {
       formData.append("name", form.name);
       formData.append("price", form.price);
       formData.append("stock", form.stock);
+      formData.append("category", form.category);
       formData.append("description", form.description);
       if (form.image) formData.append("image", form.image);
 
@@ -249,6 +252,17 @@ export default function AdminProductEdit() {
                 onChange={handleChange}
               />
               {errors.name && <span className="field-error">{errors.name}</span>}
+            </div>
+
+             <div className="form-group">
+              <label className="form-label">Product Category</label>
+              <input
+                name="category"
+                className={`form-input ${errors.category ? "error" : ""}`}
+                value={form.category}
+                onChange={handleChange}
+              />
+              {errors.category && <span className="field-error">{errors.category}</span>}
             </div>
 
             <div className="form-row">

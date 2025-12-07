@@ -68,10 +68,10 @@ const cartSlice = createSlice({
      .addCase(loadCart.fulfilled, (s, a) => { s.loading = false; s.items = a.payload; })
      .addCase(loadCart.rejected, (s, a) => { s.loading = false; s.error = a.payload; })
 
-     .addCase(addToCart.fulfilled, (s, a) => {
-  s.items = a.payload;
-  alert("Added to cart!");
-})
+//      .addCase(addToCart.fulfilled, (s, a) => {
+//   s.items = a.payload;
+//   alert("Added to cart!");
+// })
 
      .addCase(updateCartItem.fulfilled, (s, a) => { s.items = a.payload; })
      .addCase(removeCartItem.fulfilled, (s, a) => { s.items = a.payload; });

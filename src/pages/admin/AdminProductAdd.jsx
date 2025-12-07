@@ -12,6 +12,7 @@ function AdminProductAddInner() {
     name: "",
     price: "",
     stock: "",
+    category:"",
     description: "",
     image: null,
   });
@@ -46,6 +47,10 @@ function AdminProductAddInner() {
 
     if (!form.stock || parseInt(form.stock) < 0) {
       newErrors.stock = "Stock cannot be negative";
+    }
+
+    if (!form.category.trim()) {
+      newErrors.category = "Product category is required";
     }
 
     if (!form.description.trim()) {
@@ -122,6 +127,7 @@ function AdminProductAddInner() {
       formData.append("name", form.name);
       formData.append("price", form.price);
       formData.append("stock", form.stock);
+      formData.append("category", form.category)
       formData.append("description", form.description);
       if (form.image) {
         formData.append("image", form.image);
@@ -206,7 +212,7 @@ function AdminProductAddInner() {
       <main className="main-content">
         <div className="form-wrapper">
           <section className="dashboard-section">
-            <div className="section-header">
+            <div className="dashboard-section-header">
               <h2 className="section-title">Product Information</h2>
               <p className="section-subtitle">Fill in the details for your new product</p>
             </div>
@@ -298,6 +304,22 @@ function AdminProductAddInner() {
                     className={`form-input ${errors.name ? 'error' : ''}`}
                   />
                   {errors.name && <span className="field-error">{errors.name}</span>}
+                </div>
+
+                 <div className="form-group">
+                  <label className="form-label" htmlFor="name">
+                    Product Category
+                  </label>
+                  <input
+                    type="text"
+                    id="category"
+                    name="category"
+                    placeholder="Enter category name"
+                    value={form.category}
+                    onChange={handleChange}
+                    className={`form-input ${errors.category ? 'error' : ''}`}
+                  />
+                  {errors.name && <span className="field-error">{errors.category}</span>}
                 </div>
 
                 <div className="form-row">

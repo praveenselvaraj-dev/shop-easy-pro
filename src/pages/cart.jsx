@@ -161,7 +161,7 @@ export default function Cart() {
         ) : (
           <div className="cart-wrapper">
             <div className="cart-items-section">
-              <div className="section-header">
+              <div className="cart-section-header">
                 <h1 className="section-title">Shopping Cart</h1>
                 <span className="item-count">{itemCount} item{itemCount !== 1 ? 's' : ''}</span>
               </div>

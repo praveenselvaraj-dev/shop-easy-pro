@@ -99,7 +99,7 @@ body {
   align-items: center;
 }
 
-.search-icon {
+.home-search-icon {
   position: absolute;
   left: calc(var(--spacing-unit) * 1.25);
   width: 18px;

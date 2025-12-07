@@ -166,7 +166,7 @@ const { products, total, loading, error } = useSelector((s) => s.product);
         ) : (
           <div className="product-wrapper">
             <section className="dashboard-section">
-              <div className="section-header">
+              <div className="dashboard-section-header">
                 <h2 className="section-title">All Products</h2>
                 <p className="section-subtitle">Manage your product inventory</p>
               </div>

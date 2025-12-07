@@ -75,7 +75,11 @@ const userSlice = createSlice({
       })
       .addCase(registerUser.pending, (s) => { s.loading = true; })
       .addCase(registerUser.fulfilled, (s) => { s.loading = false; })
-      .addCase(registerUser.rejected, (s, a) => { s.loading = false; s.error = a.payload; })
+      .addCase(registerUser.rejected, (state, action) => {
+        const apiError = action.payload?.detail || action.payload?.message || "Registration failed";
+        state.error = apiError;
+        state.loading = false;
+      })
       .addCase(loadProfile.fulfilled, (s, a) => { 
         s.user = a.payload; 
         localStorage.setItem("user", JSON.stringify(a.payload));

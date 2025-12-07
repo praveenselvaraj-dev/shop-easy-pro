@@ -34,6 +34,18 @@ export const fetchOrderDetails = createAsyncThunk(
   }
 );
 
+export const fetchAnalytics = createAsyncThunk(
+  "admin/analytics",
+  async ({ from, to }, { rejectWithValue }) => {
+    try {
+      const res = await orderApi.analytics(from, to);
+      return res.data;
+    } catch (err) {
+      return rejectWithValue("Analytics failed");
+    }
+  }
+);
+
 
 
 const orderSlice = createSlice({
@@ -57,7 +69,10 @@ const orderSlice = createSlice({
      .addCase(fetchOrderDetails.rejected, (s, a) => {
        s.loading = false;
        s.error = a.payload;
-     });
+     })
+     .addCase(fetchAnalytics.pending, (s) => { s.loading = true; })
+          .addCase(fetchAnalytics.fulfilled, (s, a) => { s.loading = false; s.analytics = a.payload; })
+          .addCase(fetchAnalytics.rejected, (s, a) => { s.loading = false; s.error = a.payload; });
   },
 });
 

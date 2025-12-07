@@ -62,6 +62,18 @@ export const deleteProduct = createAsyncThunk(
   }
 );
 
+export const fetchLowStock = createAsyncThunk(
+  "admin/lowStock",
+  async (threshold, { rejectWithValue }) => {
+    try {
+      const res = await productApi.lowStock(threshold);
+      return res.data;
+    } catch (err) {
+      return rejectWithValue("Low stock failed");
+    }
+  }
+);
+
 const productSlice = createSlice({
   name: "product",
   initialState: {
@@ -122,6 +134,9 @@ const productSlice = createSlice({
       .addCase(deleteProduct.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+      })
+      .addCase(fetchLowStock.fulfilled, (s, a) => {
+        s.lowStock = Array.isArray(a.payload) ? a.payload : a.payload.items || [];
       });
   },
 });

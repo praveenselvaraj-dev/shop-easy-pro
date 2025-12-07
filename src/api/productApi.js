@@ -6,4 +6,7 @@ export const productApi = {
   create: (data) => productClient.post("Product/", data),
   update: (id, data) => productClient.put(`Product/${id}`, data),
   remove: (id) => productClient.delete(`Product/${id}`),
+  lowStock: (threshold) =>
+    productClient.get("admin/Product/low-stock", { params: { threshold } }),
+
 };

@@ -1,9 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchAnalytics,
-  fetchLowStock
-} from "../../store/adminSlice";
+import { fetchAnalytics } from "../../store/orderSlice";
+import { fetchLowStock } from "../../store/productSlice";
 import {
   BarChart,
   Bar,
@@ -160,7 +158,7 @@ const [toInput, setToInput] = useState(() => {
           <div className="dashboard-wrapper">
             {/* ANALYTICS SECTION */}
             <section className="dashboard-section">
-              <div className="section-header">
+              <div className="dashboard-section-header">
                 <h2 className="dashboard-section-title">Analytics</h2>
                 <p className="section-subtitle">Track sales and orders performance</p>
               </div>
@@ -268,7 +266,7 @@ const [toInput, setToInput] = useState(() => {
 
             {/* LOW STOCK SECTION */}
             <section className="dashboard-section">
-              <div className="section-header">
+              <div className="dashboard-section-header">
                 <h2 className="section-title">Inventory Management</h2>
                 <p className="section-subtitle">Monitor products below threshold</p>
               </div>

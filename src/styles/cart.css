@@ -125,7 +125,7 @@
   gap: calc(var(--spacing-unit) * 2);
 }
 
-.section-header {
+.cart-section-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
