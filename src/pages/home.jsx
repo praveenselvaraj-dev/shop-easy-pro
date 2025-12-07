@@ -206,7 +206,7 @@ function Home() {
                       src={
                         product.image.startsWith("http")
                           ? product.image
-                          : `http://127.0.0.1:8001/${product.image.startsWith("/") ? product.image.slice(1) : product.image}`
+                          : `https://shop-easy-pro-api-product.onrender.com/${product.image.startsWith("/") ? product.image.slice(1) : product.image}`
                       }
                       alt={product.name}
                       className="product-image"
