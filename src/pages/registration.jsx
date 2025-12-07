@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../store/userSlice";
-import "./ProductDetails.css";
 function Registration() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -15,8 +14,6 @@ function Registration() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [role, setRole] = useState('user');
   const [localError, setLocalError] = useState("");
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [showErrorMessage, setShowErrorMessage] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
