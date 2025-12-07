@@ -174,7 +174,7 @@ export default function Cart() {
                         src={
                           item.image?.startsWith("http")
                             ? item.image
-                            : `http://127.0.0.1:8001/${item.image?.replace(/^\//, "")}`
+                            : `https://shop-easy-pro-api-product.onrender.com/${item.image?.replace(/^\//, "")}`
                         }
                         alt={item.name}
                         className="item-image"
