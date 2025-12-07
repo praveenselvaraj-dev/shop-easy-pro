@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadCart, updateCartItem, removeCartItem } from "../store/cartSlice";
 import { checkout } from "../store/orderSlice";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/Cart.css";
+import "../styles/cart.css";
 
 export default function Cart() {
   const dispatch = useDispatch();

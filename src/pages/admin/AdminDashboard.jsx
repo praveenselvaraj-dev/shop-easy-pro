@@ -15,7 +15,7 @@ import {
 } from "recharts";
 import AdminProtectedRoute from "../../components/AdminProtectedRoute";
 import { useNavigate } from "react-router-dom";
-import "../../styles/AdminDashboard.css";
+import "../../styles/admindashboard.css";
 
 function DashboardInner() {
   const dispatch = useDispatch();

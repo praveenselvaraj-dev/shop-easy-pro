@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchOrderDetails } from "../store/orderSlice";
-import "../styles/OrderDetails.css";
+import "../styles/orderdetails.css";
 
 export default function OrderDetails() {
   const { id } = useParams();

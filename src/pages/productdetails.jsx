@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductById } from "../store/productSlice";
 import { useParams, useNavigate } from "react-router-dom";
 import { addToCart } from "../store/cartSlice";
-import "./ProductDetails.css";
+import "./prodcutdetails.css";
 
 export default function ProductDetails() {
   const { id } = useParams();
