@@ -206,15 +206,16 @@ export default function ProductDetails() {
           <div className="product-image-section">
             <div className="product-image-container">
               {product.image ? (
-                <img
+               <img
                   src={
                     product.image.startsWith("http")
                       ? product.image
-                      : `https://shop-easy-pro-api-product.onrender.com${product.image.startsWith("/") ? product.image.slice(1) : product.image}`
+                      : `https://shop-easy-pro-api-product.onrender.com/${product.image.replace(/^\/+/, "")}`
                   }
                   alt={product.name}
                   className="product-image-large"
                 />
+
               ) : (
                 <div className="no-image-large">
                   <svg viewBox="0 0 24 24" fill="currentColor">
