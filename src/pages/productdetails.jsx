@@ -19,6 +19,13 @@ export default function ProductDetails() {
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [errorText, setErrorText] = useState("");
 
+  const IMAGE_BASE_URL = "https://shop-easy-pro-api-product.onrender.com";
+
+  const getProductImageUrl = (path) => {
+    if (!path) return "/placeholder.png";
+    return `${IMAGE_BASE_URL}${path}`;
+  };
+
   useEffect(() => {
     dispatch(fetchProductById(id));
   }, [dispatch, id]);
@@ -207,14 +214,11 @@ export default function ProductDetails() {
             <div className="product-image-container">
               {product.image ? (
                <img
-                  src={
-                    product.image.startsWith("https")
-                      ? product.image
-                      : `https://shop-easy-pro-api-product.onrender.com/${product.image}`
-                  }
-                  alt={product.name}
-                  className="product-image-large"
-                />
+                          src={getProductImageUrl(product.product_image)}
+                          alt={product.product_name}
+                          className="product-image-large"
+                          onError={(e) => (e.target.src = "/placeholder.png")}
+                        />
 
               ) : (
                 <div className="no-image-large">

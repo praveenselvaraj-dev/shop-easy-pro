@@ -13,7 +13,12 @@ export default function Cart() {
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const [removingId, setRemovingId] = useState(null);
   const [checkingOut, setCheckingOut] = useState(false);
+  const IMAGE_BASE_URL = "https://shop-easy-pro-api-product.onrender.com";
 
+  const getProductImageUrl = (path) => {
+    if (!path) return "/placeholder.png";
+    return `${IMAGE_BASE_URL}${path}`;
+  };
   useEffect(() => {
     dispatch(loadCart());
   }, [dispatch]);
@@ -171,14 +176,11 @@ export default function Cart() {
                   <div key={item.id} className="cart-item">
                     <div className="item-image-wrapper">
                       <img
-                        src={
-                          item.image?.startsWith("http")
-                            ? item.image
-                            : `https://shop-easy-pro-api-product.onrender.com${item.image?.replace(/^\//, "")}`
-                        }
-                        alt={item.name}
-                        className="item-image"
-                      />
+                          src={getProductImageUrl(item.product_image)}
+                          alt={item.product_name}
+                          className="item-image"
+                          onError={(e) => (e.target.src = "/placeholder.png")}
+                        />
                     </div>
 
                     <div className="item-details">

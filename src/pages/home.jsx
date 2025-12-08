@@ -18,7 +18,12 @@ function Home() {
 
   const dropdownRef = useRef();
   const size = 10;
+  const IMAGE_BASE_URL = "https://shop-easy-pro-api-product.onrender.com";
 
+  const getProductImageUrl = (path) => {
+    if (!path) return "/placeholder.png";
+    return `${IMAGE_BASE_URL}${path}`;
+  };
   useEffect(() => {
     dispatch(
       fetchProducts({
@@ -203,14 +208,11 @@ function Home() {
                 <div className="product-image-wrapper">
                   {product.image ? (
                     <img
-                      src={
-                        product.image.startsWith("https")
-                          ? product.image
-                          : `https://shop-easy-pro-api-product.onrender.com${product.image.startsWith("/") ? product.image.slice(1) : product.image}`
-                      }
-                      alt={product.name}
-                      className="product-image"
-                    />
+                          src={getProductImageUrl(product.product_image)}
+                          alt={product.product_name}
+                          className="product-image"
+                          onError={(e) => (e.target.src = "/placeholder.png")}
+                        />
                   ) : (
                     <div className="no-image">
                       <svg viewBox="0 0 24 24" fill="currentColor">
