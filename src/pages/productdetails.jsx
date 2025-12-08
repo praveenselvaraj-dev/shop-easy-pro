@@ -208,9 +208,9 @@ export default function ProductDetails() {
               {product.image ? (
                <img
                   src={
-                    product.image.startsWith("http")
+                    product.image.startsWith("https")
                       ? product.image
-                      : `https://shop-easy-pro-api-product.onrender.com/${product.image.replace(/^\/+/, "")}`
+                      : `https://shop-easy-pro-api-product.onrender.com${product.image}`
                   }
                   alt={product.name}
                   className="product-image-large"
