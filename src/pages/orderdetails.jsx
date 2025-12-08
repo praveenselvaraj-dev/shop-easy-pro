@@ -11,7 +11,7 @@ export default function OrderDetails() {
 
   const { orderDetails, loading } = useSelector(s => s.order);
 
-  const IMAGE_BASE_URL = "http://localhost:8001";
+  const IMAGE_BASE_URL = "https://shop-easy-pro-api-product.onrender.com";
 
   const getProductImageUrl = (path) => {
     if (!path) return "/placeholder.png";

@@ -13,7 +13,7 @@ export default function Orders() {
 
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
-  const IMAGE_BASE_URL = "http://localhost:8001";
+  const IMAGE_BASE_URL = "https://shop-easy-pro-api-product.onrender.com";
 
   const getProductImageUrl = (path) => {
     if (!path) return "/placeholder.png";

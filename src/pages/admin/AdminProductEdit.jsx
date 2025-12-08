@@ -52,7 +52,7 @@ export default function AdminProductEdit() {
       });
 
       const fullImageUrl = data.image
-        ? `http://127.0.0.1:8001${data.image}`
+        ? `https://shop-easy-pro-api-product.onrender.com${data.image}`
         : null;
 
       setExistingImage(fullImageUrl);

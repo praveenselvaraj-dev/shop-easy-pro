@@ -204,9 +204,9 @@ function Home() {
                   {product.image ? (
                     <img
                       src={
-                        product.image.startsWith("http")
+                        product.image.startsWith("https")
                           ? product.image
-                          : `https://shop-easy-pro-api-product.onrender.com/${product.image.startsWith("/") ? product.image.slice(1) : product.image}`
+                          : `https://shop-easy-pro-api-product.onrender.com${product.image.startsWith("/") ? product.image.slice(1) : product.image}`
                       }
                       alt={product.name}
                       className="product-image"
