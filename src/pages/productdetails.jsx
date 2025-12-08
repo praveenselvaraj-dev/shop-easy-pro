@@ -210,7 +210,7 @@ export default function ProductDetails() {
                   src={
                     product.image.startsWith("https")
                       ? product.image
-                      : `https://shop-easy-pro-api-product.onrender.com${product.image}`
+                      : `https://shop-easy-pro-api-product.onrender.com/${product.image}`
                   }
                   alt={product.name}
                   className="product-image-large"
